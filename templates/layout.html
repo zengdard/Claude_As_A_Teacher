@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude As a Teacher</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Claude</h1>
+        <div class="header-right">
+            <h2>Claude As a Teacher / Virtual Tutor for Student Lessons and Assessments</h2>
+            <div class="icons">
+                <span class="icon">☆</span>
+                <span class="icon">⋮</span>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/chat">AI Chat Helper</a></li>
+                <li><a href="/documents">Documents</a></li>
+            </ul>
+        </nav>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+   
+</body>
+</html>

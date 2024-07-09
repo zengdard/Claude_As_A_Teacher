@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisation du document</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/chat">AI Chat Helper</a></li>
+                <li><a href="/documents">Documents</a></li>
+            </ul>
+        </nav>
+        <h1>{{ document.name }}</h1>
+        <pre>{{ document.content }}</pre>
+        <a href="/documents" class="button">Retour à la liste des documents</a>
+    </div>
+</body>
+</html>

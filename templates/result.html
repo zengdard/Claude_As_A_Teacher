@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat du traitement</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Résultat du traitement</h1>
+        
+        <h2>Résumé</h2>
+        <p>{{ result.resume }}</p>
+
+        <h2>Questions</h2>
+        <ul>
+            {% for question in result.questions %}
+            <li>{{ question }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Explication</h2>
+        <p>{{ result.explication }}</p>
+
+        <a href="/" class="button">Retour à l'accueil</a>
+    </div>
+</body>
+</html>

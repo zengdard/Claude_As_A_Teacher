@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Bienvenue sur Claude as Teacher</h1>
+
+<form action="/set_api_key" method="post">
+    <label for="api_key">Clé API Claude :</label>
+    <input type="text" id="api_key" name="api_key" value="{{ api_key }}" required>
+    <button type="submit">Mettre à jour la clé API</button>
+</form>
+
+{% if message %}
+<p class="message">{{ message }}</p>
+{% endif %}
+
+<p>Utilisez les onglets ci-dessus pour naviguer dans l'application.</p>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="documents-container">
+    <h2>Gestion des documents</h2>
+    
+    {% if message %}
+    <p class="message">{{ message }}</p>
+    {% endif %}
+
+    <form action="/add_document" method="post" enctype="multipart/form-data" class="add-document-form">
+        <input type="file" name="file" required>
+        <button type="submit">Ajouter un document</button>
+    </form>
+
+    <h3>Documents existants</h3>
+    <ul class="document-list">
+        {% for doc in documents %}
+        <li>
+            <span class="document-name">{{ doc.name }}</span>
+            <div class="document-actions">
+                <form action="/delete_document/{{ doc.id }}" method="post" style="display: inline;">
+                    <button type="submit" class="delete-button">Supprimer</button>
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

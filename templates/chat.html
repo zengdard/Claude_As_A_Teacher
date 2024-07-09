@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Chat avec Claude</h2>
+    <div class="chat-container">
+        <div class="chat-messages" id="chat-messages">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="message {% if message.role == 'user' %}user-message{% else %}ai-message{% endif %}">
+                        {% if message.role == 'assistant' %}
+                            <pre>{{ message.content }}</pre>
+                        {% else %}
+                            <p>{{ message.content }}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <form class="chat-input" action="/process_query" method="post">
+            <textarea name="query" placeholder="Posez votre question ici" required></textarea>
+            <select name="mode" required>
+                <option value="resume">Résumé</option>
+                <option value="quiz">Quiz</option>
+                <option value="evaluation">Évaluation</option>
+                <option value="apprentissage">Plan d'apprentissage</option>
+            </select>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Faire défiler automatiquement vers le bas
+    var chatMessages = document.getElementById('chat-messages');
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+</script>
+{% endblock %}
